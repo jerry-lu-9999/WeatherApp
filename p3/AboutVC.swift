@@ -10,21 +10,19 @@ import UIKit
 
 class AboutVC: UIViewController {
 
+    @IBOutlet weak var appIcon: UIImageView!
+    @IBOutlet weak var versionLabel: UILabel!
+    @IBOutlet weak var copyrightLabel: UILabel!
+    @IBOutlet weak var appNameLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        appIcon?.image = UIImage(named: "weather")
+        versionLabel?.text = Bundle.main.version
+        copyrightLabel?.text = Bundle.main.copyright
+        appNameLabel?.text = Bundle.main.displayName
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }
