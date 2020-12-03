@@ -5,3 +5,14 @@
   Created by Jiahao Lu on 12/3/20.
   Copyright © 2020 Jiahao Lu. All rights reserved.
 */
+
+"str_celcius_des" = "Encienda el sistema Celcius, apáguelo para el sistema Fahrenheit";
+"str_layout_des"  = "El orden de inserción predeterminado es, el orden alfabético se basa en el nombre de la ciudad";
+
+"str_default" = "defecto";
+"str_alphabetic" = "alfabético";
+
+"str_save_succ" = "Guardar exitoso!";
+"str_save_desc" = "Ahora puede volver a la vista principal.";
+"str_gotcha"    = "Te tengo!";
+

@@ -5,3 +5,14 @@
   Created by Jiahao Lu on 12/3/20.
   Copyright © 2020 Jiahao Lu. All rights reserved.
 */
+
+"str_celcius_des" = "Turn on Celcius system, turn off for fahrenheit system";
+"str_layout_des"  = "Default is insertion order, alphebetic order is based on the city name";
+
+"str_default" = "default";
+"str_alphabetic" = "alphabetic";
+
+"str_save_succ" = "Save successful!";
+"str_save_desc" = "You can now go back to the main view";
+"str_gotcha"    = "Gotcha!";
+

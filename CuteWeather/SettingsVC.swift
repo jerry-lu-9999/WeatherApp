@@ -8,8 +8,20 @@
 
 import UIKit
 
-class SettingsVC: UIViewController {
-
+class SettingsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return orderType.allCases.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return orderType(rawValue: row)?.title()
+    }
+    
     @IBOutlet weak var celciusLabel: UILabel!
     @IBOutlet weak var celciusSwitch: UISwitch!
     @IBOutlet weak var celciusDescription: UILabel!
@@ -19,7 +31,6 @@ class SettingsVC: UIViewController {
     @IBOutlet weak var saveBtn: UIBarButtonItem!
     @IBOutlet weak var undoBtn: UIBarButtonItem!
     
-    
     let defaults = UserDefaults.standard
     
     override func viewDidLoad() {
@@ -28,7 +39,27 @@ class SettingsVC: UIViewController {
         celciusSwitch.isOn = defaults.bool(forKey: dCelcius)
         celciusDescription?.text = NSLocalizedString("str_celcius_des", comment: "")
         layoutDescription?.text = NSLocalizedString("str_layout_des", comment: "")
+        celciusDescription?.adjustsFontSizeToFitWidth = true
+        layoutDescription?.adjustsFontSizeToFitWidth = true
+        
+        self.layoutOrderPickerView.delegate = self
+        self.layoutOrderPickerView.dataSource = self
+        
     }
     
-
+    @IBAction func onSave(_ sender: Any) {
+        let alert = UIAlertController(title: NSLocalizedString("str_save_succ", comment: ""),
+                                      message: NSLocalizedString("str_save_desc", comment: ""),
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("str_gotcha", comment: ""),
+                                      style: .default,
+                                      handler: nil))
+        self.present(alert, animated: true)
+    }
+    
+    @IBAction func undo(_ sender: Any) {
+        celciusSwitch.isOn = false
+        layoutOrderPickerView?.selectRow(0, inComponent: 0, animated: true)
+    }
+    
 }

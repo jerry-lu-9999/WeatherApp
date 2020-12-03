@@ -21,6 +21,7 @@
 		F55653E325798EA300E2F8AC /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55653E225798EA300E2F8AC /* SettingsVC.swift */; };
 		F55653E5257990BB00E2F8AC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55653E4257990BB00E2F8AC /* Constants.swift */; };
 		F55653E82579929500E2F8AC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F55653EA2579929500E2F8AC /* Localizable.strings */; };
+		F5A65D4025799EDB00A0DB2A /* orderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A65D3F25799EDB00A0DB2A /* orderType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		F55653E92579929500E2F8AC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F55653EB257992E400E2F8AC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F55653EC2579930D00E2F8AC /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F5A65D3F25799EDB00A0DB2A /* orderType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = orderType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				F55653E4257990BB00E2F8AC /* Constants.swift */,
 				F55653C42578C93000E2F8AC /* SceneDelegate.swift */,
 				F55653C82578C93000E2F8AC /* Main.storyboard */,
+				F5A65D3F25799EDB00A0DB2A /* orderType.swift */,
 				F55653E225798EA300E2F8AC /* SettingsVC.swift */,
 				F55653DB2578CF9A00E2F8AC /* TVC.swift */,
 				F55653D92578CB5600E2F8AC /* TableViewCell.swift */,
@@ -176,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F55653DE2578D28000E2F8AC /* AboutVC.swift in Sources */,
+				F5A65D4025799EDB00A0DB2A /* orderType.swift in Sources */,
 				F55653DA2578CB5600E2F8AC /* TableViewCell.swift in Sources */,
 				F55653DC2578CF9A00E2F8AC /* TVC.swift in Sources */,
 				F55653C72578C93000E2F8AC /* ViewController.swift in Sources */,
