@@ -12,7 +12,7 @@ class TVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = Bundle.main.displayName
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

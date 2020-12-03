@@ -11,7 +11,7 @@
         <!--SettingsVC-->
         <scene sceneID="ipB-6c-Azm">
             <objects>
-                <viewController title="SettingsVC" id="UaB-rZ-tIw" customClass="SettingsVC" customModule="p3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="SettingsVC" id="UaB-rZ-tIw" customClass="SettingsVC" customModule="CuteWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uBM-f8-0Q4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -36,7 +36,7 @@
                                             </switch>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description 1" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dM1-hG-mqy">
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description 1" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dM1-hG-mqy">
                                         <rect key="frame" x="0.0" y="43" width="372" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -59,7 +59,7 @@
                                             </pickerView>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description 2" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1J0-4x-GGF">
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description 2" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1J0-4x-GGF">
                                         <rect key="frame" x="0.0" y="316" width="372" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -88,6 +88,16 @@
                     </toolbarItems>
                     <navigationItem key="navigationItem" title="Settings" largeTitleDisplayMode="never" id="A5f-1s-mJV"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="celciusDescription" destination="dM1-hG-mqy" id="h4Z-vw-YVS"/>
+                        <outlet property="celciusLabel" destination="EEt-VK-mFL" id="3x1-fb-1Et"/>
+                        <outlet property="celciusSwitch" destination="EQY-uW-flS" id="EMD-nV-ikP"/>
+                        <outlet property="layoutDescription" destination="1J0-4x-GGF" id="Zyi-dW-ngm"/>
+                        <outlet property="layoutOrderLabel" destination="msv-AR-edp" id="2RP-Hr-COe"/>
+                        <outlet property="layoutOrderPickerView" destination="qzd-oC-g1U" id="zTI-J5-p9n"/>
+                        <outlet property="saveBtn" destination="pvf-nm-ZXP" id="phh-td-AQL"/>
+                        <outlet property="undoBtn" destination="W3t-cO-Ynm" id="8vb-3Q-Xck"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8i0-J6-8nI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -96,13 +106,13 @@
         <!--TVC-->
         <scene sceneID="k67-EW-FRd">
             <objects>
-                <tableViewController id="vTi-Vl-jcP" customClass="TVC" customModule="p3" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="vTi-Vl-jcP" customClass="TVC" customModule="CuteWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="fHh-Mm-Qte">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="1" green="0.93725490199999995" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="113" id="RLz-F1-wP1" customClass="TableViewCell" customModule="p3" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" rowHeight="113" id="RLz-F1-wP1" customClass="TableViewCell" customModule="CuteWeather" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="113"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RLz-F1-wP1" id="sZf-T4-0sM">
@@ -143,7 +153,7 @@
         <!--AboutVC-->
         <scene sceneID="mgD-Gu-kGV">
             <objects>
-                <viewController title="AboutVC" id="bga-sz-KVU" customClass="AboutVC" customModule="p3" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="AboutVC" id="bga-sz-KVU" customClass="AboutVC" customModule="CuteWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bT4-aK-ksb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

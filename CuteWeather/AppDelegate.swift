@@ -13,7 +13,14 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
-
+    let defaultDictionary: [String:Any] = [
+        dCelcius: false
+    ]
+    
+    func initDefaults(){
+        UserDefaults.standard.register(defaults: defaultDictionary)
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true

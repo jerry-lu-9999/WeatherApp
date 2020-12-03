@@ -19,10 +19,12 @@
 		F55653DE2578D28000E2F8AC /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55653DD2578D28000E2F8AC /* AboutVC.swift */; };
 		F55653E02578D8B600E2F8AC /* Bundle+info.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55653DF2578D8B600E2F8AC /* Bundle+info.swift */; };
 		F55653E325798EA300E2F8AC /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55653E225798EA300E2F8AC /* SettingsVC.swift */; };
+		F55653E5257990BB00E2F8AC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55653E4257990BB00E2F8AC /* Constants.swift */; };
+		F55653E82579929500E2F8AC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F55653EA2579929500E2F8AC /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F55653BF2578C93000E2F8AC /* p3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = p3.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F55653BF2578C93000E2F8AC /* CuteWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CuteWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F55653C22578C93000E2F8AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F55653C42578C93000E2F8AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F55653C62578C93000E2F8AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -36,6 +38,10 @@
 		F55653DD2578D28000E2F8AC /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 		F55653DF2578D8B600E2F8AC /* Bundle+info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+info.swift"; sourceTree = "<group>"; };
 		F55653E225798EA300E2F8AC /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
+		F55653E4257990BB00E2F8AC /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F55653E92579929500E2F8AC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F55653EB257992E400E2F8AC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F55653EC2579930D00E2F8AC /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +58,7 @@
 		F55653B62578C93000E2F8AC = {
 			isa = PBXGroup;
 			children = (
-				F55653C12578C93000E2F8AC /* p3 */,
+				F55653C12578C93000E2F8AC /* CuteWeather */,
 				F55653C02578C93000E2F8AC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,28 +66,30 @@
 		F55653C02578C93000E2F8AC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F55653BF2578C93000E2F8AC /* p3.app */,
+				F55653BF2578C93000E2F8AC /* CuteWeather.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F55653C12578C93000E2F8AC /* p3 */ = {
+		F55653C12578C93000E2F8AC /* CuteWeather */ = {
 			isa = PBXGroup;
 			children = (
 				F55653E12578DB8500E2F8AC /* Copyright */,
 				F55653C22578C93000E2F8AC /* AppDelegate.swift */,
+				F55653E4257990BB00E2F8AC /* Constants.swift */,
 				F55653C42578C93000E2F8AC /* SceneDelegate.swift */,
-				F55653C62578C93000E2F8AC /* ViewController.swift */,
 				F55653C82578C93000E2F8AC /* Main.storyboard */,
 				F55653E225798EA300E2F8AC /* SettingsVC.swift */,
 				F55653DB2578CF9A00E2F8AC /* TVC.swift */,
 				F55653D92578CB5600E2F8AC /* TableViewCell.swift */,
+				F55653C62578C93000E2F8AC /* ViewController.swift */,
 				F55653CE2578C93400E2F8AC /* Assets.xcassets */,
+				F55653EA2579929500E2F8AC /* Localizable.strings */,
 				F55653D02578C93400E2F8AC /* LaunchScreen.storyboard */,
 				F55653D32578C93400E2F8AC /* Info.plist */,
 				F55653CB2578C93000E2F8AC /* p3.xcdatamodeld */,
 			);
-			path = p3;
+			path = CuteWeather;
 			sourceTree = "<group>";
 		};
 		F55653E12578DB8500E2F8AC /* Copyright */ = {
@@ -96,9 +104,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F55653BE2578C93000E2F8AC /* p3 */ = {
+		F55653BE2578C93000E2F8AC /* CuteWeather */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F55653D62578C93400E2F8AC /* Build configuration list for PBXNativeTarget "p3" */;
+			buildConfigurationList = F55653D62578C93400E2F8AC /* Build configuration list for PBXNativeTarget "CuteWeather" */;
 			buildPhases = (
 				F55653BB2578C93000E2F8AC /* Sources */,
 				F55653BC2578C93000E2F8AC /* Frameworks */,
@@ -108,9 +116,9 @@
 			);
 			dependencies = (
 			);
-			name = p3;
+			name = CuteWeather;
 			productName = p3;
-			productReference = F55653BF2578C93000E2F8AC /* p3.app */;
+			productReference = F55653BF2578C93000E2F8AC /* CuteWeather.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -128,20 +136,22 @@
 					};
 				};
 			};
-			buildConfigurationList = F55653BA2578C93000E2F8AC /* Build configuration list for PBXProject "p3" */;
+			buildConfigurationList = F55653BA2578C93000E2F8AC /* Build configuration list for PBXProject "CuteWeather" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				fr,
+				es,
 			);
 			mainGroup = F55653B62578C93000E2F8AC;
 			productRefGroup = F55653C02578C93000E2F8AC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F55653BE2578C93000E2F8AC /* p3 */,
+				F55653BE2578C93000E2F8AC /* CuteWeather */,
 			);
 		};
 /* End PBXProject section */
@@ -152,6 +162,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F55653D22578C93400E2F8AC /* LaunchScreen.storyboard in Resources */,
+				F55653E82579929500E2F8AC /* Localizable.strings in Resources */,
 				F55653CF2578C93400E2F8AC /* Assets.xcassets in Resources */,
 				F55653CA2578C93000E2F8AC /* Main.storyboard in Resources */,
 			);
@@ -169,6 +180,7 @@
 				F55653DC2578CF9A00E2F8AC /* TVC.swift in Sources */,
 				F55653C72578C93000E2F8AC /* ViewController.swift in Sources */,
 				F55653C32578C93000E2F8AC /* AppDelegate.swift in Sources */,
+				F55653E5257990BB00E2F8AC /* Constants.swift in Sources */,
 				F55653E02578D8B600E2F8AC /* Bundle+info.swift in Sources */,
 				F55653CD2578C93000E2F8AC /* p3.xcdatamodeld in Sources */,
 				F55653C52578C93000E2F8AC /* SceneDelegate.swift in Sources */,
@@ -195,6 +207,16 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		F55653EA2579929500E2F8AC /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F55653E92579929500E2F8AC /* en */,
+				F55653EB257992E400E2F8AC /* fr */,
+				F55653EC2579930D00E2F8AC /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
@@ -202,6 +224,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -248,6 +271,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = CuteWeather/Info.plist;
+				"INFOPLIST_FILE[sdk=*]" = CuteWeather/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -262,6 +287,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -302,6 +328,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = CuteWeather/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.7;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -318,7 +345,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V9YW4H59N3;
-				INFOPLIST_FILE = p3/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/CuteWeather/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -336,7 +363,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = V9YW4H59N3;
-				INFOPLIST_FILE = p3/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/CuteWeather/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -351,7 +378,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F55653BA2578C93000E2F8AC /* Build configuration list for PBXProject "p3" */ = {
+		F55653BA2578C93000E2F8AC /* Build configuration list for PBXProject "CuteWeather" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F55653D42578C93400E2F8AC /* Debug */,
@@ -360,7 +387,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F55653D62578C93400E2F8AC /* Build configuration list for PBXNativeTarget "p3" */ = {
+		F55653D62578C93400E2F8AC /* Build configuration list for PBXNativeTarget "CuteWeather" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F55653D72578C93400E2F8AC /* Debug */,
