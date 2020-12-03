@@ -18,6 +18,7 @@
 		F55653DC2578CF9A00E2F8AC /* TVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55653DB2578CF9A00E2F8AC /* TVC.swift */; };
 		F55653DE2578D28000E2F8AC /* AboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55653DD2578D28000E2F8AC /* AboutVC.swift */; };
 		F55653E02578D8B600E2F8AC /* Bundle+info.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55653DF2578D8B600E2F8AC /* Bundle+info.swift */; };
+		F55653E325798EA300E2F8AC /* SettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55653E225798EA300E2F8AC /* SettingsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		F55653DB2578CF9A00E2F8AC /* TVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVC.swift; sourceTree = "<group>"; };
 		F55653DD2578D28000E2F8AC /* AboutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutVC.swift; sourceTree = "<group>"; };
 		F55653DF2578D8B600E2F8AC /* Bundle+info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+info.swift"; sourceTree = "<group>"; };
+		F55653E225798EA300E2F8AC /* SettingsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,12 +68,12 @@
 		F55653C12578C93000E2F8AC /* p3 */ = {
 			isa = PBXGroup;
 			children = (
+				F55653E12578DB8500E2F8AC /* Copyright */,
 				F55653C22578C93000E2F8AC /* AppDelegate.swift */,
 				F55653C42578C93000E2F8AC /* SceneDelegate.swift */,
-				F55653DD2578D28000E2F8AC /* AboutVC.swift */,
-				F55653DF2578D8B600E2F8AC /* Bundle+info.swift */,
 				F55653C62578C93000E2F8AC /* ViewController.swift */,
 				F55653C82578C93000E2F8AC /* Main.storyboard */,
+				F55653E225798EA300E2F8AC /* SettingsVC.swift */,
 				F55653DB2578CF9A00E2F8AC /* TVC.swift */,
 				F55653D92578CB5600E2F8AC /* TableViewCell.swift */,
 				F55653CE2578C93400E2F8AC /* Assets.xcassets */,
@@ -80,6 +82,15 @@
 				F55653CB2578C93000E2F8AC /* p3.xcdatamodeld */,
 			);
 			path = p3;
+			sourceTree = "<group>";
+		};
+		F55653E12578DB8500E2F8AC /* Copyright */ = {
+			isa = PBXGroup;
+			children = (
+				F55653DF2578D8B600E2F8AC /* Bundle+info.swift */,
+				F55653DD2578D28000E2F8AC /* AboutVC.swift */,
+			);
+			path = Copyright;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +172,7 @@
 				F55653E02578D8B600E2F8AC /* Bundle+info.swift in Sources */,
 				F55653CD2578C93000E2F8AC /* p3.xcdatamodeld in Sources */,
 				F55653C52578C93000E2F8AC /* SceneDelegate.swift in Sources */,
+				F55653E325798EA300E2F8AC /* SettingsVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

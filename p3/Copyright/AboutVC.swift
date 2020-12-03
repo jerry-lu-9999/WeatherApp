@@ -18,7 +18,6 @@ class AboutVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        appIcon?.image = UIImage(named: "weather")
         versionLabel?.text = Bundle.main.version
         copyrightLabel?.text = Bundle.main.copyright
         appNameLabel?.text = Bundle.main.displayName
