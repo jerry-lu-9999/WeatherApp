@@ -22,7 +22,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="231" translatesAutoresizingMaskIntoConstraints="NO" id="kUG-TF-rQC">
                                         <rect key="frame" x="0.0" y="0.0" width="371.5" height="31"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Celcius (ºC)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EEt-VK-mFL">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Celcius (ºC)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EEt-VK-mFL">
                                                 <rect key="frame" x="0.0" y="0.0" width="91.5" height="31"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="31" id="KOw-kk-kY6"/>
@@ -31,7 +31,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EQY-uW-flS">
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EQY-uW-flS">
                                                 <rect key="frame" x="322.5" y="0.0" width="51" height="31"/>
                                             </switch>
                                         </subviews>
@@ -128,7 +128,38 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RLz-F1-wP1" id="sZf-T4-0sM">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="113"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="101" translatesAutoresizingMaskIntoConstraints="NO" id="SNj-80-CmQ">
+                                            <rect key="frame" x="14" y="28" width="380" height="57"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rC9-yO-xVZ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="184.5" height="57"/>
+                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="40"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtw-VZ-397">
+                                                    <rect key="frame" x="285.5" y="0.0" width="94.5" height="57"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="gtw-VZ-397" firstAttribute="height" secondItem="rC9-yO-xVZ" secondAttribute="height" id="zKt-kb-gb2"/>
+                                            </constraints>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="SNj-80-CmQ" firstAttribute="leading" secondItem="sZf-T4-0sM" secondAttribute="leading" constant="14" id="HlG-g7-Xiq"/>
+                                        <constraint firstItem="SNj-80-CmQ" firstAttribute="centerY" secondItem="sZf-T4-0sM" secondAttribute="centerY" id="TAn-6U-vRa"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="1" green="0.93725490199999995" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="cityNameLabel" destination="rC9-yO-xVZ" id="O4h-kY-cGc"/>
+                                    <outlet property="tempLabel" destination="gtw-VZ-397" id="jXh-WB-OLl"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -152,7 +183,10 @@
                                 <segue destination="UaB-rZ-tIw" kind="show" id="REV-15-jmK"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="BnI-5Q-FQ5"/>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="plus" catalog="system" id="BnI-5Q-FQ5"/>
+                            <barButtonItem title="Item" image="magnifyingglass" catalog="system" id="Eu9-FM-1cq"/>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
@@ -241,6 +275,7 @@
     </scenes>
     <resources>
         <image name="gear" catalog="system" width="128" height="119"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="rosette" catalog="system" width="100" height="128"/>
         <image name="transparent logo" width="300" height="300"/>

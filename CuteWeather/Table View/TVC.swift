@@ -1,30 +1,61 @@
 //
 //  TVC.swift
-//  p3
+//  
 //
 //  Created by Jiahao Lu on 12/2/20.
 //  Copyright © 2020 Jiahao Lu. All rights reserved.
 //
 
 import UIKit
+import MapKit
 
-class TVC: UITableViewController {
+extension CLPlacemark{
+    var city: String? { locality }
+    var state: String? { administrativeArea }
+    var county: String? {subAdministrativeArea }
+}
+
+extension CLLocation{
+    func placemark(completion: @escaping (_ placemark: CLPlacemark?, _ error: Error?) -> ()){
+        CLGeocoder().reverseGeocodeLocation(self){
+            completion($0?.first, $1)
+        }
+    }
+}
+
+class TVC: UITableViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = Bundle.main.displayName
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        //display refresh
+        let refreshControl = UIRefreshControl()
+        refreshControl.attributedTitle = NSAttributedString(string: "Getting you the most updated data")
+        refreshControl.addTarget(self, action: #selector(getWeather(_:)), for: .valueChanged)
+        self.refreshControl = refreshControl
+        
+        //Getting the name of the city from latitude and longitdue
+        let location = CLLocation(latitude: 37.331676, longitude: -122.030189)
+        location.placemark{ placemark, error in
+            guard let placemark = placemark else{
+                print("ERROR:", error ?? "nil")
+                return
+            }
+            print(placemark.city!)
+        }
+    }
+    
+    @objc func getWeather(_ sender:Any){
+        self.tableView.reloadData()
+        self.refreshControl?.endRefreshing()
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -32,15 +63,14 @@ class TVC: UITableViewController {
         return 0
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath)
+        
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

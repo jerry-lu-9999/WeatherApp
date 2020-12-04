@@ -1,6 +1,6 @@
 //
 //  TableViewCell.swift
-//  p3
+//  
 //
 //  Created by Jiahao Lu on 12/2/20.
 //  Copyright © 2020 Jiahao Lu. All rights reserved.
@@ -9,7 +9,10 @@
 import UIKit
 
 class TableViewCell: UITableViewCell {
-
+    
+    @IBOutlet weak var cityNameLabel: UILabel!
+    @IBOutlet weak var tempLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
