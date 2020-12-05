@@ -10,7 +10,7 @@
 "str_layout_des"  = "Default is insertion order, alphebetic order is based on the city name";
 
 "str_default" = "default";
-"str_alphabetic" = "alphabetic";
+"str_animation" = "animation";
 
 "str_save_succ" = "Save successful!";
 "str_save_desc" = "You can now go back to the main view";

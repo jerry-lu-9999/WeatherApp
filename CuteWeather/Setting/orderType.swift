@@ -16,7 +16,7 @@ enum orderType: Int, CaseIterable{
         case .default:
             return NSLocalizedString("str_default", comment: "")
         case .alphabetic:
-            return NSLocalizedString("str_alphabetic", comment: "")
+            return NSLocalizedString("str_animation", comment: "")
         }
     }
 }

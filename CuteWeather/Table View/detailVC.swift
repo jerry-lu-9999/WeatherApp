@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SpriteKit
 
 class detailVC: UIViewController {
 
@@ -16,27 +17,32 @@ class detailVC: UIViewController {
     
     var details : DailyWeather!
     
+    let emitterNode = SKEmitterNode(fileNamed: "rain.sks")!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if details.icon == "rain" {
             weatherImage?.image = UIImage(named: "rainy")
+            addRain()
         } else{
             weatherImage?.image = UIImage(named: "sunny")
         }
         temperatureLabel?.text = "\(details.temperatureHigh)"
         summaryLabel?.text = details.summary
-        // Do any additional setup after loading the view.
+
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    public func addRain(){
+        let skView = SKView(frame: view.frame)
+        let scene = SKScene(size: view.frame.size)
+        skView.backgroundColor = .clear
+        scene.backgroundColor = .clear
+        skView.presentScene(scene)
+        skView.isUserInteractionEnabled = false
+        scene.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        scene.addChild(emitterNode)
+        emitterNode.position.y = scene.frame.maxY
+        emitterNode.particlePositionRange.dx = scene.frame.width
+        view.addSubview(skView)
     }
-    */
-
 }

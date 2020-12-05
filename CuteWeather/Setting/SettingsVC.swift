@@ -48,7 +48,8 @@ class SettingsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     }
     
     @IBAction func onSwitch(_ sender: UISwitch) {
-        defaults.set(sender.isOn, forKey: "dCelcius")
+        defaults.set(sender.isOn, forKey: dCelcius)
+        NotificationCenter.default.post(name: Notification.Name("system changed"), object: nil, userInfo: nil)
     }
     
     @IBAction func onSave(_ sender: Any) {

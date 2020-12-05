@@ -140,17 +140,17 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="233" height="91.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="City Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rC9-yO-xVZ">
-                                                            <rect key="frame" x="0.0" y="0.0" width="233" height="25.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="233" height="24.5"/>
                                                             <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6F-Nf-Dsp">
-                                                            <rect key="frame" x="0.0" y="43.5" width="233" height="48"/>
+                                                            <rect key="frame" x="0.0" y="42.5" width="233" height="49"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="233" id="yxC-5T-f6N"/>
                                                             </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                            <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="40"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -164,7 +164,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="91.5" id="2q4-Rh-Heh"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="46"/>
+                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="49"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>

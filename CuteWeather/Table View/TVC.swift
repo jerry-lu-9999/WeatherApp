@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
-
+import SpriteKit
 //extension CLPlacemark{
 //    var city: String? { locality }
 //    var state: String? { administrativeArea }
@@ -40,6 +40,7 @@ class TVC: UITableViewController, CLLocationManagerDelegate{
         refreshControl.addTarget(self, action: #selector(getWeather(_:)), for: .valueChanged)
         self.refreshControl = refreshControl
         
+        NotificationCenter.default.addObserver(self, selector: #selector(receivedMetricChanged), name: Notification.Name("system changed"), object: nil)
         //Getting the name of the city from latitude and longitdue
 //        let location = CLLocation(latitude: currentLoc.coordinate.latitude, longitude: currentLoc.coordinate.longitude)
 //        location.placemark{ placemark, error in
@@ -51,6 +52,11 @@ class TVC: UITableViewController, CLLocationManagerDelegate{
 //        }
     }
     
+    @objc func receivedMetricChanged(){
+        weathersModel.celcius = true
+        self.tableView.reloadData()
+    }
+    
     @objc func getWeather(_ sender:Any){
         loadRequest()
         self.tableView.reloadData()
@@ -58,9 +64,9 @@ class TVC: UITableViewController, CLLocationManagerDelegate{
     }
 
     func loadRequest(){
+            NotificationCenter.default.addObserver(self, selector: #selector(receivedMetricChanged), name: Notification.Name("system changed"), object: nil)
             let weathers = readJSON(fileName: "darksky_sample", type: Weathers.self)
         weathersModel = model(items: weathers!.daily.data, latitude: weathers!.latitude, longtitude: weathers!.longitude, timezone: weathers!.timezone)
-            print(weathersModel.items)
 //            let lat = 43.2360
 //            let long = -77.6933
 //            let weburl = URL(string: "https://api.darksky.net/forecast/\(Constants.apiKey)/\(lat),\(long)/")!
@@ -98,7 +104,7 @@ class TVC: UITableViewController, CLLocationManagerDelegate{
         cell.dateLabel?.text = currentDate
         
         var temp = self.weathersModel.items[indexPath.row].temperatureHigh
-        if UserDefaults.standard.bool(forKey: "dCelcius") == true{
+        if self.weathersModel.celcius == true{
             temp = (temp - 32.0) * 5 / 9
             let tempString = String(format: "%.0f", temp) + "ºC"
             cell.tempLabel?.text = tempString
@@ -114,6 +120,7 @@ class TVC: UITableViewController, CLLocationManagerDelegate{
         return cell
     }
     
+    //MARK: -Navigation to another view controller
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "showdetail", sender: self)
         tableView.deselectRow(at: indexPath, animated: true)
@@ -125,15 +132,8 @@ class TVC: UITableViewController, CLLocationManagerDelegate{
         }
         
     }
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
 
-
+    //MARK: - DELETION
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let dailyWeather = self.weathersModel.items[indexPath.row]
@@ -167,29 +167,5 @@ class TVC: UITableViewController, CLLocationManagerDelegate{
             weathersModel.items.remove(at: index)
         }
     }
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

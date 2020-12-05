@@ -45,6 +45,7 @@ class model:Codable{
     var latitude = 0.0
     var longitude = 0.0
     var timezone : String
+    var celcius = false
     init(items : [DailyWeather], latitude: Double, longtitude: Double, timezone: String) {
         self.items = items
         self.latitude = latitude

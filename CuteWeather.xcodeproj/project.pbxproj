@@ -10,6 +10,8 @@
 		F53E4750257B3B9C00AC1B61 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53E474F257B3B9C00AC1B61 /* Utils.swift */; };
 		F53E4754257B477400AC1B61 /* darksky_sample.json in Resources */ = {isa = PBXBuildFile; fileRef = F53E4753257B477400AC1B61 /* darksky_sample.json */; };
 		F53E4758257B580A00AC1B61 /* detailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53E4757257B580A00AC1B61 /* detailVC.swift */; };
+		F54A8CA2257B99D10047342E /* rain.sks in Resources */ = {isa = PBXBuildFile; fileRef = F54A8CA0257B99D10047342E /* rain.sks */; };
+		F54A8CA3257B99D10047342E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F54A8CA1257B99D10047342E /* Assets.xcassets */; };
 		F55653C32578C93000E2F8AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55653C22578C93000E2F8AC /* AppDelegate.swift */; };
 		F55653C52578C93000E2F8AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55653C42578C93000E2F8AC /* SceneDelegate.swift */; };
 		F55653C72578C93000E2F8AC /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F55653C62578C93000E2F8AC /* MainVC.swift */; };
@@ -33,6 +35,8 @@
 		F53E474F257B3B9C00AC1B61 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		F53E4753257B477400AC1B61 /* darksky_sample.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = darksky_sample.json; sourceTree = "<group>"; };
 		F53E4757257B580A00AC1B61 /* detailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailVC.swift; sourceTree = "<group>"; };
+		F54A8CA0257B99D10047342E /* rain.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = rain.sks; sourceTree = "<group>"; };
+		F54A8CA1257B99D10047342E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F55653BF2578C93000E2F8AC /* CuteWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CuteWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F55653C22578C93000E2F8AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F55653C42578C93000E2F8AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,7 +93,6 @@
 				F5A65D422579ACBB00A0DB2A /* Table View */,
 				F5A65D412579AC8C00A0DB2A /* Setting */,
 				F55653E12578DB8500E2F8AC /* Copyright */,
-				F55653C22578C93000E2F8AC /* AppDelegate.swift */,
 				F55653C82578C93000E2F8AC /* Main.storyboard */,
 				F55653E4257990BB00E2F8AC /* Constants.swift */,
 				F53E4753257B477400AC1B61 /* darksky_sample.json */,
@@ -117,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				F55653E225798EA300E2F8AC /* SettingsVC.swift */,
+				F55653C22578C93000E2F8AC /* AppDelegate.swift */,
 				F5A65D3F25799EDB00A0DB2A /* orderType.swift */,
 			);
 			path = Setting;
@@ -127,6 +131,8 @@
 			children = (
 				F55653D92578CB5600E2F8AC /* TableViewCell.swift */,
 				F55653DB2578CF9A00E2F8AC /* TVC.swift */,
+				F54A8CA0257B99D10047342E /* rain.sks */,
+				F54A8CA1257B99D10047342E /* Assets.xcassets */,
 				F53E4757257B580A00AC1B61 /* detailVC.swift */,
 				F5A65D472579F20400A0DB2A /* FileManager.swift */,
 				F5A65D452579ECBF00A0DB2A /* Weathers.swift */,
@@ -199,7 +205,9 @@
 				F53E4754257B477400AC1B61 /* darksky_sample.json in Resources */,
 				F55653E82579929500E2F8AC /* Localizable.strings in Resources */,
 				F55653CF2578C93400E2F8AC /* Assets.xcassets in Resources */,
+				F54A8CA3257B99D10047342E /* Assets.xcassets in Resources */,
 				F55653CA2578C93000E2F8AC /* Main.storyboard in Resources */,
+				F54A8CA2257B99D10047342E /* rain.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
