@@ -115,6 +115,14 @@ class TVC: UITableViewController, CLLocationManagerDelegate{
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showdetail", sender: self)
+        //tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? detailVC{
+            destination.details = self.weathersModel.items[(tableView.indexPathForSelectedRow?.row)!]
+        }
         
     }
     /*

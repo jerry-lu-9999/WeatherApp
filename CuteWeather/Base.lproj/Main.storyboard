@@ -182,9 +182,6 @@
                                     <outlet property="cityNameLabel" destination="rC9-yO-xVZ" id="O4h-kY-cGc"/>
                                     <outlet property="dateLabel" destination="h6F-Nf-Dsp" id="bZT-0D-YGk"/>
                                     <outlet property="tempLabel" destination="gtw-VZ-397" id="jXh-WB-OLl"/>
-                                    <segue destination="VVh-Zz-ygQ" kind="popoverPresentation" popoverAnchorView="RLz-F1-wP1" id="IQ9-fT-V8E">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -217,25 +214,41 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="VVh-Zz-ygQ" kind="show" identifier="showdetail" id="HNM-Jc-tfh"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mql-9A-hWw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="117.85714285714285"/>
         </scene>
-        <!--View Controller-->
+        <!--detailVC-->
         <scene sceneID="IIR-xQ-zod">
             <objects>
-                <viewController id="VVh-Zz-ygQ" sceneMemberID="viewController">
+                <viewController title="detailVC" id="VVh-Zz-ygQ" customClass="detailVC" customModule="CuteWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OTZ-5h-MjW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Temperature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fMZ-hp-IgC">
+                                <rect key="frame" x="121" y="124" width="172" height="99"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="mkL-FT-8JT"/>
                     </view>
+                    <navigationItem key="navigationItem" id="yjx-31-XZO"/>
+                    <connections>
+                        <outlet property="temperatureLabel" destination="fMZ-hp-IgC" id="3JB-2f-Pit"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qPw-0u-DNC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1880" y="118"/>
+            <point key="canvasLocation" x="2068" y="118"/>
         </scene>
         <!--AboutVC-->
         <scene sceneID="mgD-Gu-kGV">
