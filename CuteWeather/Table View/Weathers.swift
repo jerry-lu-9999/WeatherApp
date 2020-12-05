@@ -51,4 +51,5 @@ class model:Codable{
         self.longitude = longtitude
         self.timezone = timezone
     }
+    
 }

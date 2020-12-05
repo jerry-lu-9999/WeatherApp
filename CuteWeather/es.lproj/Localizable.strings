@@ -16,3 +16,7 @@
 "str_save_desc" = "Ahora puede volver a la vista principal.";
 "str_gotcha"    = "Te tengo!";
 
+"str_warning" = "Advertencia";
+"str_alertmsg" = "Estás seguro que quieres eliminar esto?";
+"str_delete" = "Eliminar";
+"str_cancel" = "Cancelar";

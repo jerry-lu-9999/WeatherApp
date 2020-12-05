@@ -116,7 +116,7 @@ class TVC: UITableViewController, CLLocationManagerDelegate{
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "showdetail", sender: self)
-        //tableView.deselectRow(at: indexPath, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -133,18 +133,40 @@ class TVC: UITableViewController, CLLocationManagerDelegate{
     }
     */
 
-    /*
-    // Override to support editing the table view.
+
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+            let dailyWeather = self.weathersModel.items[indexPath.row]
+            deleteAlert(){ _ in
+                self.deleteWeather(weather: dailyWeather)
+                self.tableView.deleteRows(at: [indexPath], with: .top)
+                //self.tableView.reloadData()
+            }
+        }
     }
-    */
-
+    
+    func deleteAlert(completion: @escaping (UIAlertAction) -> Void){
+        let alertMsg = NSLocalizedString("str_alertmsg", comment: "")
+        let alert = UIAlertController(title: NSLocalizedString("str_warning", comment: "") , message: alertMsg, preferredStyle: .actionSheet)
+        
+        let deleteAction = UIAlertAction(title: NSLocalizedString("str_delete", comment: ""), style: .destructive, handler: completion)
+        let cancelAction = UIAlertAction(title: NSLocalizedString("str_cancel", comment: ""), style: .cancel, handler: nil)
+        
+        alert.addAction(deleteAction)
+        alert.addAction(cancelAction)
+        
+        alert.popoverPresentationController?.permittedArrowDirections = []
+        alert.popoverPresentationController?.sourceView = self.view
+        alert.popoverPresentationController?.sourceRect = CGRect(x: self.view.frame.midX, y: self.view.frame.midY, width: 0, height: 0)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func deleteWeather(weather: DailyWeather){
+        if let index = weathersModel.items.firstIndex(where:{$0.time == weather.time}){
+            weathersModel.items.remove(at: index)
+        }
+    }
     /*
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {

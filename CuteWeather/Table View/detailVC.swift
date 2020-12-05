@@ -10,13 +10,21 @@ import UIKit
 
 class detailVC: UIViewController {
 
+    @IBOutlet weak var weatherImage: UIImageView!
     @IBOutlet weak var temperatureLabel: UILabel!
+    @IBOutlet weak var summaryLabel: UILabel!
     
     var details : DailyWeather!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if details.icon == "rain" {
+            weatherImage?.image = UIImage(named: "rainy")
+        } else{
+            weatherImage?.image = UIImage(named: "sunny")
+        }
         temperatureLabel?.text = "\(details.temperatureHigh)"
+        summaryLabel?.text = details.summary
         // Do any additional setup after loading the view.
     }
     

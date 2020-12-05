@@ -16,3 +16,7 @@
 "str_save_desc" = "You can now go back to the main view";
 "str_gotcha"    = "Gotcha!";
 
+"str_warning" = "Warning";
+"str_alertmsg" = "Are you sure you want to do this?";
+"str_delete" = "Delete";
+"str_cancel" = "Cancel";
