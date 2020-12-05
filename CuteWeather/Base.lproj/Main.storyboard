@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="FnR-V0-7yJ">
-                                <rect key="frame" x="21" y="140" width="372" height="350"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7PG-I1-v0o">
+                                <rect key="frame" x="21" y="140" width="371.5" height="318"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="231" translatesAutoresizingMaskIntoConstraints="NO" id="kUG-TF-rQC">
                                         <rect key="frame" x="0.0" y="0.0" width="371.5" height="31"/>
@@ -40,17 +40,18 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description 1" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dM1-hG-mqy">
-                                        <rect key="frame" x="0.0" y="43" width="372" height="33"/>
+                                        <rect key="frame" x="0.0" y="39.5" width="371.5" height="21.5"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pmU-Eh-atg">
-                                        <rect key="frame" x="0.0" y="88" width="372" height="216"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Wf3-9s-09F">
+                                        <rect key="frame" x="0.0" y="72" width="371.5" height="216"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Order" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msv-AR-edp">
-                                                <rect key="frame" x="0.0" y="92.5" width="44.5" height="31"/>
+                                                <rect key="frame" x="0.0" y="92.5" width="91.5" height="31"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="width" constant="91.5" id="Agd-q1-OsY"/>
                                                     <constraint firstAttribute="height" constant="31" id="hBQ-27-kSh"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -58,31 +59,26 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qzd-oC-g1U">
-                                                <rect key="frame" x="52.5" y="0.0" width="319.5" height="216"/>
+                                                <rect key="frame" x="141.5" y="0.0" width="230" height="216"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="230" id="kzc-EW-Sj6"/>
+                                                </constraints>
                                             </pickerView>
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description 2" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1J0-4x-GGF">
-                                        <rect key="frame" x="0.0" y="316" width="372" height="34"/>
+                                        <rect key="frame" x="0.0" y="296.5" width="371.5" height="21.5"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="1J0-4x-GGF" firstAttribute="width" secondItem="dM1-hG-mqy" secondAttribute="width" id="81N-Ts-Td4"/>
-                                    <constraint firstItem="dM1-hG-mqy" firstAttribute="width" secondItem="kUG-TF-rQC" secondAttribute="width" multiplier="1.00135" id="Kyr-xR-bfD"/>
-                                    <constraint firstItem="1J0-4x-GGF" firstAttribute="height" secondItem="dM1-hG-mqy" secondAttribute="height" multiplier="1.0303" id="OJg-WR-983"/>
-                                    <constraint firstItem="dM1-hG-mqy" firstAttribute="height" secondItem="kUG-TF-rQC" secondAttribute="height" multiplier="1.06452" id="tZS-eP-kb7"/>
-                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.93725490199999995" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="FnR-V0-7yJ" firstAttribute="top" secondItem="Ipc-0j-cfG" secondAttribute="top" constant="52" id="8Gg-xV-qTE"/>
-                            <constraint firstItem="FnR-V0-7yJ" firstAttribute="leading" secondItem="Ipc-0j-cfG" secondAttribute="leading" constant="21" id="BG1-Ze-K4z"/>
-                            <constraint firstItem="pmU-Eh-atg" firstAttribute="leading" secondItem="Ipc-0j-cfG" secondAttribute="leading" constant="21" id="D1G-dg-jQl"/>
-                            <constraint firstItem="FnR-V0-7yJ" firstAttribute="centerX" secondItem="Ipc-0j-cfG" secondAttribute="centerX" id="LXa-Bg-ICd"/>
+                            <constraint firstItem="7PG-I1-v0o" firstAttribute="top" secondItem="Ipc-0j-cfG" secondAttribute="top" constant="52" id="Gvu-9m-YBj"/>
+                            <constraint firstItem="7PG-I1-v0o" firstAttribute="centerX" secondItem="Ipc-0j-cfG" secondAttribute="centerX" id="xKX-17-aBc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ipc-0j-cfG"/>
                     </view>
@@ -114,7 +110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8i0-J6-8nI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1833" y="-639"/>
+            <point key="canvasLocation" x="1831.8840579710147" y="-639.50892857142856"/>
         </scene>
         <!--TVC-->
         <scene sceneID="k67-EW-FRd">
@@ -208,10 +204,7 @@
                                 <segue destination="UaB-rZ-tIw" kind="show" id="REV-15-jmK"/>
                             </connections>
                         </barButtonItem>
-                        <rightBarButtonItems>
-                            <barButtonItem title="Item" image="plus" catalog="system" id="BnI-5Q-FQ5"/>
-                            <barButtonItem title="Item" image="magnifyingglass" catalog="system" id="Eu9-FM-1cq"/>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="magnifyingglass" catalog="system" id="Eu9-FM-1cq"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -234,16 +227,20 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8oW-A6-XoI">
                                 <rect key="frame" x="87" y="20" width="240" height="128"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="TQn-pG-Rie" appends="YES" id="KZo-I6-4ro"/>
+                                </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="temp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixJ-Nz-7SZ">
                                 <rect key="frame" x="124" y="156" width="167" height="107"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="61"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Summary" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQ2-9O-ASM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Summary" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQ2-9O-ASM">
                                 <rect key="frame" x="87" y="283" width="240" height="37"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -267,6 +264,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qPw-0u-DNC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="TQn-pG-Rie">
+                    <connections>
+                        <action selector="onSwipe:" destination="VVh-Zz-ygQ" id="E3x-C1-1Ur"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2066.666666666667" y="117.85714285714285"/>
         </scene>
@@ -354,7 +356,6 @@
     <resources>
         <image name="gear" catalog="system" width="128" height="119"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
-        <image name="plus" catalog="system" width="128" height="113"/>
         <image name="rosette" catalog="system" width="100" height="128"/>
         <image name="transparent logo" width="300" height="300"/>
     </resources>

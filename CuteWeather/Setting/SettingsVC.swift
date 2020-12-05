@@ -1,6 +1,6 @@
 //
 //  SettingsVC.swift
-//  p3
+//
 //
 //  Created by Jiahao Lu on 12/3/20.
 //  Copyright © 2020 Jiahao Lu. All rights reserved.
@@ -33,8 +33,7 @@ class SettingsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     
     let defaults = UserDefaults.standard
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
         
         celciusSwitch.isOn = defaults.bool(forKey: dCelcius)
         celciusDescription?.text = NSLocalizedString("str_celcius_des", comment: "")

@@ -12,7 +12,6 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
     let defaultDictionary: [String:Any] = [
         dCelcius: false
     ]

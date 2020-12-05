@@ -53,7 +53,7 @@ class TVC: UITableViewController, CLLocationManagerDelegate{
     }
     
     @objc func receivedMetricChanged(){
-        weathersModel.celcius = true
+        weathersModel.celcius = UserDefaults.standard.bool(forKey: dCelcius)
         self.tableView.reloadData()
     }
     
@@ -65,6 +65,7 @@ class TVC: UITableViewController, CLLocationManagerDelegate{
 
     func loadRequest(){
             NotificationCenter.default.addObserver(self, selector: #selector(receivedMetricChanged), name: Notification.Name("system changed"), object: nil)
+        UserDefaults.standard.set(false, forKey: dCelcius)
             let weathers = readJSON(fileName: "darksky_sample", type: Weathers.self)
         weathersModel = model(items: weathers!.daily.data, latitude: weathers!.latitude, longtitude: weathers!.longitude, timezone: weathers!.timezone)
 //            let lat = 43.2360
@@ -116,8 +117,23 @@ class TVC: UITableViewController, CLLocationManagerDelegate{
         cell.tempLabel.adjustsFontSizeToFitWidth = true
         
         cell.cityNameLabel?.text = "Rochester"
+        
+        if self.weathersModel.items[indexPath.row].icon == "rain"{
+            cell.backgroundColor = UIColor(red: 83/255.0, green: 120/255.0, blue: 158/255.0, alpha: 1)
+            cell.cityNameLabel?.textColor = .white
+            cell.dateLabel?.textColor = .white
+            cell.tempLabel?.textColor = .white
+        }
 
         return cell
+    }
+    
+    //MARK:- Table View Animation
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.alpha = 0
+        UIView.animate(withDuration: 0.5,
+                       delay: 0.1 * Double(indexPath.row),
+                       animations: {cell.alpha = 1})
     }
     
     //MARK: -Navigation to another view controller
@@ -133,7 +149,7 @@ class TVC: UITableViewController, CLLocationManagerDelegate{
         
     }
 
-    //MARK: - DELETION
+    //MARK: - Deletion
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let dailyWeather = self.weathersModel.items[indexPath.row]

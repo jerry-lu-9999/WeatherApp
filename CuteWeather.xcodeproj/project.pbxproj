@@ -120,8 +120,8 @@
 			isa = PBXGroup;
 			children = (
 				F55653E225798EA300E2F8AC /* SettingsVC.swift */,
-				F55653C22578C93000E2F8AC /* AppDelegate.swift */,
 				F5A65D3F25799EDB00A0DB2A /* orderType.swift */,
+				F55653C22578C93000E2F8AC /* AppDelegate.swift */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -131,12 +131,12 @@
 			children = (
 				F55653D92578CB5600E2F8AC /* TableViewCell.swift */,
 				F55653DB2578CF9A00E2F8AC /* TVC.swift */,
+				F53E4757257B580A00AC1B61 /* detailVC.swift */,
 				F54A8CA0257B99D10047342E /* rain.sks */,
 				F54A8CA1257B99D10047342E /* Assets.xcassets */,
-				F53E4757257B580A00AC1B61 /* detailVC.swift */,
-				F5A65D472579F20400A0DB2A /* FileManager.swift */,
 				F5A65D452579ECBF00A0DB2A /* Weathers.swift */,
 				F53E474F257B3B9C00AC1B61 /* Utils.swift */,
+				F5A65D472579F20400A0DB2A /* FileManager.swift */,
 			);
 			path = "Table View";
 			sourceTree = "<group>";

@@ -16,20 +16,73 @@ class detailVC: UIViewController {
     @IBOutlet weak var summaryLabel: UILabel!
     
     var details : DailyWeather!
+    var celcius = false
     
     let emitterNode = SKEmitterNode(fileNamed: "rain.sks")!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        //super.viewDidLoad()
+        weatherImage.isUserInteractionEnabled = true
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapImage))
+        tapRecognizer.numberOfTapsRequired = 1
+        weatherImage.addGestureRecognizer(tapRecognizer)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(changeCelcius), name: Notification.Name("system changed"), object: nil)
+        
+        var temp = details.temperatureHigh
+        if celcius == true{
+            temp = (temp - 32.0) * 5 / 9
+            let tempString = String(format: "%.0f", temp) + "ºC"
+            temperatureLabel?.text = tempString
+        } else{
+            let tempString = String(format: "%.0f", temp) + "ºF"
+            temperatureLabel?.text = tempString
+        }
+        
+        summaryLabel?.text = details.summary
+        summaryLabel?.adjustsFontSizeToFitWidth = true
+        
         if details.icon == "rain" {
             weatherImage?.image = UIImage(named: "rainy")
+            view.backgroundColor = Constants.rainColor
+            summaryLabel?.textColor = .white
+            temperatureLabel?.textColor = .white
             addRain()
         } else{
             weatherImage?.image = UIImage(named: "sunny")
         }
-        temperatureLabel?.text = "\(details.temperatureHigh)"
-        summaryLabel?.text = details.summary
 
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        var temp = details.temperatureHigh
+        if celcius == true{
+            temp = (temp - 32.0) * 5 / 9
+            let tempString = String(format: "%.0f", temp) + "ºC"
+            temperatureLabel?.text = tempString
+        } else{
+            let tempString = String(format: "%.0f", temp) + "ºF"
+            temperatureLabel?.text = tempString
+        }
+    }
+    
+    @objc func tapImage(_ sender: UITapGestureRecognizer){
+        UIView.transition(with: self.weatherImage,
+                          duration: 0.5,
+                          options: .transitionCrossDissolve,
+                          animations: {self.weatherImage.image = UIImage(named: "transparent logo")},
+                          completion: nil)
+    }
+    
+    @objc func changeCelcius(){
+        celcius = UserDefaults.standard.bool(forKey: dCelcius)
+        self.view.setNeedsDisplay()
+    }
+    
+    @IBAction func onSwipe(_ sender: UISwipeGestureRecognizer) {
+        if sender.direction == .left{
+            weatherImage?.image = UIImage(named: "transparent logo")
+        }
     }
     
     public func addRain(){
