@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import CoreLocation
 
-class MainVC: UIViewController {
+class MainVC: UIViewController, CLLocationManagerDelegate {
 
+    var locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+
     }
 
 

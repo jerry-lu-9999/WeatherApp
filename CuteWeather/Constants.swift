@@ -9,3 +9,7 @@
 import Foundation
 
 let dCelcius = "Celcius"
+
+public struct Constants{
+    public static let apiKey = "YOUR_KEY_HERE"
+}

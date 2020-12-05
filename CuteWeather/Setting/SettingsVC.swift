@@ -47,7 +47,12 @@ class SettingsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         
     }
     
+    @IBAction func onSwitch(_ sender: UISwitch) {
+        defaults.set(sender.isOn, forKey: "dCelcius")
+    }
+    
     @IBAction func onSave(_ sender: Any) {
+        
         let alert = UIAlertController(title: NSLocalizedString("str_save_succ", comment: ""),
                                       message: NSLocalizedString("str_save_desc", comment: ""),
                                       preferredStyle: .alert)

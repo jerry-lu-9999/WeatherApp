@@ -8,26 +8,31 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
-extension CLPlacemark{
-    var city: String? { locality }
-    var state: String? { administrativeArea }
-    var county: String? {subAdministrativeArea }
-}
+//extension CLPlacemark{
+//    var city: String? { locality }
+//    var state: String? { administrativeArea }
+//    var county: String? {subAdministrativeArea }
+//}
+//
+//extension CLLocation{
+//    func placemark(completion: @escaping (_ placemark: CLPlacemark?, _ error: Error?) -> ()){
+//        CLGeocoder().reverseGeocodeLocation(self){
+//            completion($0?.first, $1)
+//        }
+//    }
+//}
 
-extension CLLocation{
-    func placemark(completion: @escaping (_ placemark: CLPlacemark?, _ error: Error?) -> ()){
-        CLGeocoder().reverseGeocodeLocation(self){
-            completion($0?.first, $1)
-        }
-    }
-}
+class TVC: UITableViewController, CLLocationManagerDelegate{
 
-class TVC: UITableViewController{
-
+    var weathersModel : model!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = Bundle.main.displayName
+        self.tableView.rowHeight = 140
+        loadRequest()
         
         //display refresh
         let refreshControl = UIRefreshControl()
@@ -36,21 +41,41 @@ class TVC: UITableViewController{
         self.refreshControl = refreshControl
         
         //Getting the name of the city from latitude and longitdue
-        let location = CLLocation(latitude: 37.331676, longitude: -122.030189)
-        location.placemark{ placemark, error in
-            guard let placemark = placemark else{
-                print("ERROR:", error ?? "nil")
-                return
-            }
-            print(placemark.city!)
-        }
+//        let location = CLLocation(latitude: currentLoc.coordinate.latitude, longitude: currentLoc.coordinate.longitude)
+//        location.placemark{ placemark, error in
+//            guard let placemark = placemark else{
+//                print("ERROR:", error ?? "nil")
+//                return
+//            }
+//            print(placemark.city!)
+//        }
     }
     
     @objc func getWeather(_ sender:Any){
+        loadRequest()
         self.tableView.reloadData()
         self.refreshControl?.endRefreshing()
     }
 
+    func loadRequest(){
+            let weathers = readJSON(fileName: "darksky_sample", type: Weathers.self)
+        weathersModel = model(items: weathers!.daily.data, latitude: weathers!.latitude, longtitude: weathers!.longitude, timezone: weathers!.timezone)
+            print(weathersModel.items)
+//            let lat = 43.2360
+//            let long = -77.6933
+//            let weburl = URL(string: "https://api.darksky.net/forecast/\(Constants.apiKey)/\(lat),\(long)/")!
+//            let request = URLRequest(url: weburl)
+//            let session = URLSession(configuration: .default, delegate: nil, delegateQueue: OperationQueue.main)
+//            let task = session.dataTask(with: request){(data, response, error) in
+//
+//                if let error = error {
+//                    print(error.localizedDescription)
+//                } else if let data = data {
+
+//                }
+//            }
+//            task.resume()
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -60,18 +85,38 @@ class TVC: UITableViewController{
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.weathersModel.items.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as? TableViewCell else{
+            fatalError("Expect tableviewcell")
+        }
         
+        let currentDate = dayFromSeconds(seconds: self.weathersModel.items[indexPath.row].time, timeZone: self.weathersModel.timezone)
+        cell.dateLabel?.text = currentDate
+        
+        var temp = self.weathersModel.items[indexPath.row].temperatureHigh
+        if UserDefaults.standard.bool(forKey: "dCelcius") == true{
+            temp = (temp - 32.0) * 5 / 9
+            let tempString = String(format: "%.0f", temp) + "ºC"
+            cell.tempLabel?.text = tempString
+        } else{
+            let tempString = String(format: "%.0f", temp) + "ºF"
+            cell.tempLabel?.text = tempString
+        }
+        
+        cell.tempLabel.adjustsFontSizeToFitWidth = true
+        
+        cell.cityNameLabel?.text = "Rochester"
 
         return cell
     }
     
-
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

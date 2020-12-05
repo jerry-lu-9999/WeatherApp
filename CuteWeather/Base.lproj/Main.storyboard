@@ -33,10 +33,13 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EQY-uW-flS">
                                                 <rect key="frame" x="322.5" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="onSwitch:" destination="UaB-rZ-tIw" eventType="valueChanged" id="btS-u8-74N"/>
+                                                </connections>
                                             </switch>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description 1" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dM1-hG-mqy">
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description 1" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dM1-hG-mqy">
                                         <rect key="frame" x="0.0" y="43" width="372" height="33"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
                                         <nil key="textColor"/>
@@ -59,7 +62,7 @@
                                             </pickerView>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description 2" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1J0-4x-GGF">
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description 2" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1J0-4x-GGF">
                                         <rect key="frame" x="0.0" y="316" width="372" height="34"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="15"/>
                                         <nil key="textColor"/>
@@ -111,7 +114,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8i0-J6-8nI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1880" y="-368"/>
+            <point key="canvasLocation" x="1833" y="-639"/>
         </scene>
         <!--TVC-->
         <scene sceneID="k67-EW-FRd">
@@ -121,44 +124,67 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="0.93725490199999995" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexBackgroundColor" red="1" green="0.93725490199999995" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" rowHeight="113" id="RLz-F1-wP1" customClass="TableViewCell" customModule="CuteWeather" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="113"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" rowHeight="150" id="RLz-F1-wP1" customClass="TableViewCell" customModule="CuteWeather" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RLz-F1-wP1" id="sZf-T4-0sM">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="113"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="101" translatesAutoresizingMaskIntoConstraints="NO" id="SNj-80-CmQ">
-                                            <rect key="frame" x="14" y="28" width="380" height="57"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aJW-fh-fE5">
+                                            <rect key="frame" x="30" y="29.5" width="358.5" height="91.5"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rC9-yO-xVZ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="184.5" height="57"/>
-                                                    <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="40"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtw-VZ-397">
-                                                    <rect key="frame" x="285.5" y="0.0" width="94.5" height="57"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="Zk3-ZI-c8k">
+                                                    <rect key="frame" x="0.0" y="0.0" width="233" height="91.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="City Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rC9-yO-xVZ">
+                                                            <rect key="frame" x="0.0" y="0.0" width="233" height="25.5"/>
+                                                            <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6F-Nf-Dsp">
+                                                            <rect key="frame" x="0.0" y="43.5" width="233" height="48"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="233" id="yxC-5T-f6N"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="rC9-yO-xVZ" firstAttribute="width" secondItem="h6F-Nf-Dsp" secondAttribute="width" id="hMM-WJ-Afb"/>
+                                                    </constraints>
+                                                </stackView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temp" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtw-VZ-397">
+                                                    <rect key="frame" x="241" y="0.0" width="117.5" height="91.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="91.5" id="2q4-Rh-Heh"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="46"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <constraints>
-                                                <constraint firstItem="gtw-VZ-397" firstAttribute="height" secondItem="rC9-yO-xVZ" secondAttribute="height" id="zKt-kb-gb2"/>
-                                            </constraints>
                                         </stackView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="SNj-80-CmQ" firstAttribute="leading" secondItem="sZf-T4-0sM" secondAttribute="leading" constant="14" id="HlG-g7-Xiq"/>
-                                        <constraint firstItem="SNj-80-CmQ" firstAttribute="centerY" secondItem="sZf-T4-0sM" secondAttribute="centerY" id="TAn-6U-vRa"/>
+                                        <constraint firstItem="aJW-fh-fE5" firstAttribute="leading" secondItem="sZf-T4-0sM" secondAttribute="leading" constant="30" id="MSl-T2-pI9"/>
+                                        <constraint firstAttribute="trailing" secondItem="aJW-fh-fE5" secondAttribute="trailing" constant="25.5" id="PVJ-ua-voA"/>
+                                        <constraint firstItem="aJW-fh-fE5" firstAttribute="centerY" secondItem="sZf-T4-0sM" secondAttribute="centerY" id="zDl-nq-Y2u"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="0.93725490199999995" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="cityNameLabel" destination="rC9-yO-xVZ" id="O4h-kY-cGc"/>
+                                    <outlet property="dateLabel" destination="h6F-Nf-Dsp" id="bZT-0D-YGk"/>
                                     <outlet property="tempLabel" destination="gtw-VZ-397" id="jXh-WB-OLl"/>
+                                    <segue destination="VVh-Zz-ygQ" kind="popoverPresentation" popoverAnchorView="RLz-F1-wP1" id="IQ9-fT-V8E">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -168,7 +194,9 @@
                         </connections>
                     </tableView>
                     <toolbarItems>
-                        <barButtonItem style="plain" systemItem="flexibleSpace" id="spF-Sp-CLn"/>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="spF-Sp-CLn">
+                            <color key="tintColor" red="1" green="0.93725490199999995" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
                         <barButtonItem title="Item" image="rosette" catalog="system" id="Uqp-6g-lpF">
                             <connections>
                                 <segue destination="bga-sz-KVU" kind="popoverPresentation" popoverAnchorBarButtonItem="Uqp-6g-lpF" id="mC7-de-IIr">
@@ -193,6 +221,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mql-9A-hWw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="117.85714285714285"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="IIR-xQ-zod">
+            <objects>
+                <viewController id="VVh-Zz-ygQ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OTZ-5h-MjW">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="mkL-FT-8JT"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qPw-0u-DNC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1880" y="118"/>
         </scene>
         <!--AboutVC-->
         <scene sceneID="mgD-Gu-kGV">
@@ -258,11 +301,13 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="hBI-Yv-B8c">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="1" green="0.93725490199999995" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0ha-tf-Mez">
                         <rect key="frame" x="0.0" y="813" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="1" green="0.93725490199999995" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </toolbar>
                     <connections>
                         <segue destination="vTi-Vl-jcP" kind="relationship" relationship="rootViewController" id="FPt-h0-Kob"/>
