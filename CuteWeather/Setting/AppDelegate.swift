@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     let defaultDictionary: [String:Any] = [
         dCelcius: false,
-        dAnimated: false
+        dAnimated: 0
     ]
     
     func initDefaults(){

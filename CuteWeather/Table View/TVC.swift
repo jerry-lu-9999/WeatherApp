@@ -27,6 +27,7 @@ import SpriteKit
 class TVC: UITableViewController, CLLocationManagerDelegate{
 
     var weathersModel : model!
+    var locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,16 +41,10 @@ class TVC: UITableViewController, CLLocationManagerDelegate{
         refreshControl.addTarget(self, action: #selector(getWeather(_:)), for: .valueChanged)
         self.refreshControl = refreshControl
         
+        locationManager.requestWhenInUseAuthorization()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(receivedMetricChanged), name: Notification.Name("system changed"), object: nil)
-        //Getting the name of the city from latitude and longitdue
-//        let location = CLLocation(latitude: currentLoc.coordinate.latitude, longitude: currentLoc.coordinate.longitude)
-//        location.placemark{ placemark, error in
-//            guard let placemark = placemark else{
-//                print("ERROR:", error ?? "nil")
-//                return
-//            }
-//            print(placemark.city!)
-//        }
+
     }
     
     @objc func receivedMetricChanged(){
@@ -64,10 +59,11 @@ class TVC: UITableViewController, CLLocationManagerDelegate{
     }
 
     func loadRequest(){
-            NotificationCenter.default.addObserver(self, selector: #selector(receivedMetricChanged), name: Notification.Name("system changed"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(receivedMetricChanged), name: Notification.Name("system changed"), object: nil)
         UserDefaults.standard.set(false, forKey: dCelcius)
             let weathers = readJSON(fileName: "darksky_sample", type: Weathers.self)
         weathersModel = model(items: weathers!.daily.data, latitude: weathers!.latitude, longtitude: weathers!.longitude, timezone: weathers!.timezone)
+        
 //            let lat = 43.2360
 //            let long = -77.6933
 //            let weburl = URL(string: "https://api.darksky.net/forecast/\(Constants.apiKey)/\(lat),\(long)/")!
@@ -156,7 +152,6 @@ class TVC: UITableViewController, CLLocationManagerDelegate{
             deleteAlert(){ _ in
                 self.deleteWeather(weather: dailyWeather)
                 self.tableView.deleteRows(at: [indexPath], with: .top)
-                //self.tableView.reloadData()
             }
         }
     }

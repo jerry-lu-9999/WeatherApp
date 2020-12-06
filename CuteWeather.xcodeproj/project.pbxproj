@@ -90,14 +90,14 @@
 		F55653C12578C93000E2F8AC /* CuteWeather */ = {
 			isa = PBXGroup;
 			children = (
+				F55653C82578C93000E2F8AC /* Main.storyboard */,
+				F55653C62578C93000E2F8AC /* MainVC.swift */,
 				F5A65D422579ACBB00A0DB2A /* Table View */,
 				F5A65D412579AC8C00A0DB2A /* Setting */,
 				F55653E12578DB8500E2F8AC /* Copyright */,
-				F55653C82578C93000E2F8AC /* Main.storyboard */,
 				F55653E4257990BB00E2F8AC /* Constants.swift */,
 				F53E4753257B477400AC1B61 /* darksky_sample.json */,
 				F55653C42578C93000E2F8AC /* SceneDelegate.swift */,
-				F55653C62578C93000E2F8AC /* MainVC.swift */,
 				F55653CE2578C93400E2F8AC /* Assets.xcassets */,
 				F55653EA2579929500E2F8AC /* Localizable.strings */,
 				F55653D02578C93400E2F8AC /* LaunchScreen.storyboard */,

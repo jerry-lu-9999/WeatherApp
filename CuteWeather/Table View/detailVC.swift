@@ -17,20 +17,25 @@ class detailVC: UIViewController {
     
     var details : DailyWeather!
     var celcius = false
+    var animation = 0
     
     let emitterNode = SKEmitterNode(fileNamed: "rain.sks")!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         weatherImage.isUserInteractionEnabled = true
-        let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(tapImage(_:)))
-        //swipeRecognizer.numberOfTapsRequired = 1
+        let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeImage(_:)))
         weatherImage.addGestureRecognizer(swipeRecognizer)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(changeCelcius), name: Notification.Name("system changed"), object: nil)
+        NotificationCenter.default.addObserver(forName: Notification.Name("system changed"),object: nil, queue: nil){ _ in
+            self.changeCelcius()
+        }
+        NotificationCenter.default.addObserver(forName: Notification.Name("animation changed"), object: nil, queue: nil){ _ in
+            self.changeAnimation()
+        }
         
         var temp = details.temperatureHigh
-        if celcius == true{
+        if self.celcius == true{
             temp = (temp - 32.0) * 5 / 9
             let tempString = String(format: "%.0f", temp) + "ºC"
             temperatureLabel?.text = tempString
@@ -48,13 +53,15 @@ class detailVC: UIViewController {
             summaryLabel?.textColor = .white
             temperatureLabel?.textColor = .white
             addRain()
+            
         } else{
+            view.backgroundColor = UIColor(red: 135/255.0, green: 206/255.0, blue: 250/255.0, alpha: 1)
             weatherImage?.image = UIImage(named: "sunny")
         }
 
     }
     
-    @objc func tapImage(_ sender: UISwipeGestureRecognizer){
+    @objc func swipeImage(_ sender: UISwipeGestureRecognizer){
         if sender.direction == .left ||  sender.direction == .right{
             UIView.transition(with: self.weatherImage,
                               duration: 0.5,
@@ -66,14 +73,21 @@ class detailVC: UIViewController {
         self.weatherImage.setNeedsDisplay()
     }
     
-    @objc func changeCelcius(){
-        celcius = UserDefaults.standard.bool(forKey: dCelcius)
-        self.view.setNeedsDisplay()
+    func changeCelcius(){
+        OperationQueue.main.addOperation {
+            self.celcius = UserDefaults.standard.bool(forKey: dCelcius)
+            self.view.layoutIfNeeded()
+        }
+        //self.viewDidLoad()
     }
     
-    @IBAction func onSwipe(_ sender: UISwipeGestureRecognizer) {
-        
-
+     func changeAnimation(){
+        OperationQueue.main.addOperation {
+            self.animation = UserDefaults.standard.integer(forKey: dAnimated)
+            print(self.animation)
+            self.view.layoutIfNeeded()
+        }
+        //self.viewDidLoad()
     }
     
     public func addRain(){

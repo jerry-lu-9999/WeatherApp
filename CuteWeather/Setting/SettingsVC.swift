@@ -56,6 +56,8 @@ class SettingsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     }
     
     @IBAction func onSave(_ sender: Any) {
+        defaults.set(layoutOrderPickerView.selectedRow(inComponent: 0), forKey: dAnimated)
+        NotificationCenter.default.post(name: Notification.Name("animation changed"), object: nil, userInfo: nil)
         
         let alert = UIAlertController(title: NSLocalizedString("str_save_succ", comment: ""),
                                       message: NSLocalizedString("str_save_desc", comment: ""),
