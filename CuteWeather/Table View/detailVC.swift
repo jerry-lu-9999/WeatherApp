@@ -21,11 +21,11 @@ class detailVC: UIViewController {
     let emitterNode = SKEmitterNode(fileNamed: "rain.sks")!
     
     override func viewDidLoad() {
-        //super.viewDidLoad()
+        super.viewDidLoad()
         weatherImage.isUserInteractionEnabled = true
-        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapImage))
-        tapRecognizer.numberOfTapsRequired = 1
-        weatherImage.addGestureRecognizer(tapRecognizer)
+        let swipeRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(tapImage(_:)))
+        //swipeRecognizer.numberOfTapsRequired = 1
+        weatherImage.addGestureRecognizer(swipeRecognizer)
         
         NotificationCenter.default.addObserver(self, selector: #selector(changeCelcius), name: Notification.Name("system changed"), object: nil)
         
@@ -54,24 +54,16 @@ class detailVC: UIViewController {
 
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        var temp = details.temperatureHigh
-        if celcius == true{
-            temp = (temp - 32.0) * 5 / 9
-            let tempString = String(format: "%.0f", temp) + "ºC"
-            temperatureLabel?.text = tempString
-        } else{
-            let tempString = String(format: "%.0f", temp) + "ºF"
-            temperatureLabel?.text = tempString
+    @objc func tapImage(_ sender: UISwipeGestureRecognizer){
+        if sender.direction == .left ||  sender.direction == .right{
+            UIView.transition(with: self.weatherImage,
+                              duration: 0.5,
+                              options: .transitionCrossDissolve,
+                              animations: {self.weatherImage.image = UIImage(named: "transparent logo")},
+                              completion: nil)
         }
-    }
-    
-    @objc func tapImage(_ sender: UITapGestureRecognizer){
-        UIView.transition(with: self.weatherImage,
-                          duration: 0.5,
-                          options: .transitionCrossDissolve,
-                          animations: {self.weatherImage.image = UIImage(named: "transparent logo")},
-                          completion: nil)
+        self.weatherImage.layoutIfNeeded()
+        self.weatherImage.setNeedsDisplay()
     }
     
     @objc func changeCelcius(){
@@ -80,9 +72,8 @@ class detailVC: UIViewController {
     }
     
     @IBAction func onSwipe(_ sender: UISwipeGestureRecognizer) {
-        if sender.direction == .left{
-            weatherImage?.image = UIImage(named: "transparent logo")
-        }
+        
+
     }
     
     public func addRain(){

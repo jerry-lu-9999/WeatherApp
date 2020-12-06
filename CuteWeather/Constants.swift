@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 let dCelcius = "Celcius"
+let dAnimated = "Animation"
 
 public struct Constants{
     public static let apiKey = "YOUR_KEY_HERE"

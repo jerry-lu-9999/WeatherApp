@@ -13,7 +13,8 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     let defaultDictionary: [String:Any] = [
-        dCelcius: false
+        dCelcius: false,
+        dAnimated: false
     ]
     
     func initDefaults(){

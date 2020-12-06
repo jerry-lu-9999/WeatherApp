@@ -9,13 +9,13 @@
 import Foundation
 
 enum orderType: Int, CaseIterable{
-    case  `default`, alphabetic
+    case  `default`, animated
     
     func title() -> String{
         switch self {
         case .default:
             return NSLocalizedString("str_default", comment: "")
-        case .alphabetic:
+        case .animated:
             return NSLocalizedString("str_animation", comment: "")
         }
     }

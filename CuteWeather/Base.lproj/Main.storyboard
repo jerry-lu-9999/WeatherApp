@@ -208,9 +208,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <segue destination="VVh-Zz-ygQ" kind="popoverPresentation" identifier="showdetail" popoverAnchorView="fHh-Mm-Qte" id="HNM-Jc-tfh">
-                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                        </segue>
+                        <segue destination="VVh-Zz-ygQ" kind="show" identifier="showdetail" id="HNM-Jc-tfh"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mql-9A-hWw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -222,25 +220,25 @@
             <objects>
                 <viewController title="detailVC" id="VVh-Zz-ygQ" customClass="detailVC" customModule="CuteWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OTZ-5h-MjW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8oW-A6-XoI">
-                                <rect key="frame" x="87" y="20" width="240" height="128"/>
+                                <rect key="frame" x="87" y="89" width="240" height="128"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="TQn-pG-Rie" appends="YES" id="KZo-I6-4ro"/>
                                 </connections>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="temp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixJ-Nz-7SZ">
-                                <rect key="frame" x="124" y="156" width="167" height="107"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="61"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Summary" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQ2-9O-ASM">
+                                <rect key="frame" x="87" y="352" width="240" height="37"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="21"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Summary" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQ2-9O-ASM">
-                                <rect key="frame" x="87" y="283" width="240" height="37"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="temp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixJ-Nz-7SZ">
+                                <rect key="frame" x="124" y="225" width="167" height="107"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="61"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -250,8 +248,8 @@
                             <constraint firstItem="8oW-A6-XoI" firstAttribute="centerX" secondItem="mkL-FT-8JT" secondAttribute="centerX" id="9lS-ar-eIs"/>
                             <constraint firstItem="ixJ-Nz-7SZ" firstAttribute="top" secondItem="8oW-A6-XoI" secondAttribute="bottom" constant="8" id="JL9-hg-sIo"/>
                             <constraint firstItem="ixJ-Nz-7SZ" firstAttribute="centerX" secondItem="mkL-FT-8JT" secondAttribute="centerX" id="RdX-rb-OXK"/>
-                            <constraint firstItem="8oW-A6-XoI" firstAttribute="top" secondItem="mkL-FT-8JT" secondAttribute="top" constant="20" id="Xhj-bY-EN4"/>
                             <constraint firstItem="FQ2-9O-ASM" firstAttribute="centerX" secondItem="mkL-FT-8JT" secondAttribute="centerX" id="Ywf-IU-2pi"/>
+                            <constraint firstItem="mkL-FT-8JT" firstAttribute="top" secondItem="8oW-A6-XoI" secondAttribute="top" constant="51" id="e0m-zT-r4d"/>
                             <constraint firstItem="FQ2-9O-ASM" firstAttribute="top" secondItem="ixJ-Nz-7SZ" secondAttribute="bottom" constant="20" id="w7x-5f-MWf"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="mkL-FT-8JT"/>
@@ -336,7 +334,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="hBI-Yv-B8c">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="1" green="0.93725490199999995" blue="0.83529411760000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0ha-tf-Mez">

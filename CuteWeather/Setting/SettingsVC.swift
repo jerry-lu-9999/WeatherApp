@@ -22,6 +22,10 @@ class SettingsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         return orderType(rawValue: row)?.title()
     }
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        //var selectedRow =
+    }
+    
     @IBOutlet weak var celciusLabel: UILabel!
     @IBOutlet weak var celciusSwitch: UISwitch!
     @IBOutlet weak var celciusDescription: UILabel!
