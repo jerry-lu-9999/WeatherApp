@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7PG-I1-v0o">
-                                <rect key="frame" x="21" y="140" width="371.5" height="318"/>
+                                <rect key="frame" x="21.5" y="140" width="371.5" height="318"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="231" translatesAutoresizingMaskIntoConstraints="NO" id="kUG-TF-rQC">
                                         <rect key="frame" x="0.0" y="0.0" width="371.5" height="31"/>
@@ -48,7 +48,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Wf3-9s-09F">
                                         <rect key="frame" x="0.0" y="72" width="371.5" height="216"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Order" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msv-AR-edp">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Animation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msv-AR-edp">
                                                 <rect key="frame" x="0.0" y="92.5" width="91.5" height="31"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="91.5" id="Agd-q1-OsY"/>
@@ -98,11 +98,11 @@
                     <navigationItem key="navigationItem" title="Settings" largeTitleDisplayMode="never" id="A5f-1s-mJV"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="animationLabel" destination="msv-AR-edp" id="HyW-Ni-5xQ"/>
                         <outlet property="celciusDescription" destination="dM1-hG-mqy" id="h4Z-vw-YVS"/>
                         <outlet property="celciusLabel" destination="EEt-VK-mFL" id="3x1-fb-1Et"/>
                         <outlet property="celciusSwitch" destination="EQY-uW-flS" id="EMD-nV-ikP"/>
                         <outlet property="layoutDescription" destination="1J0-4x-GGF" id="Zyi-dW-ngm"/>
-                        <outlet property="layoutOrderLabel" destination="msv-AR-edp" id="2RP-Hr-COe"/>
                         <outlet property="layoutOrderPickerView" destination="qzd-oC-g1U" id="zTI-J5-p9n"/>
                         <outlet property="saveBtn" destination="pvf-nm-ZXP" id="phh-td-AQL"/>
                         <outlet property="undoBtn" destination="W3t-cO-Ynm" id="8vb-3Q-Xck"/>

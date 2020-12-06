@@ -7,10 +7,10 @@
 */
 
 "str_celcius_des" = "Encienda el sistema Celcius, apáguelo para el sistema Fahrenheit";
-"str_layout_des"  = "El orden de inserción predeterminado es, el orden alfabético se basa en el nombre de la ciudad";
+"str_layout_des"  = "Cambie la configuración de la animación. Por defecto significa que no hay animación";
 
 "str_default" = "defecto";
-"str_alphabetic" = "alfabético";
+"str_animation" = "animación";
 
 "str_save_succ" = "Guardar exitoso!";
 "str_save_desc" = "Ahora puede volver a la vista principal.";

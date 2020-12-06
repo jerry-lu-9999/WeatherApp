@@ -27,9 +27,10 @@ class SettingsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
     }
     
     @IBOutlet weak var celciusLabel: UILabel!
+    @IBOutlet weak var animationLabel: UILabel!
+    
     @IBOutlet weak var celciusSwitch: UISwitch!
     @IBOutlet weak var celciusDescription: UILabel!
-    @IBOutlet weak var layoutOrderLabel: UILabel!
     @IBOutlet weak var layoutOrderPickerView: UIPickerView!
     @IBOutlet weak var layoutDescription: UILabel!
     @IBOutlet weak var saveBtn: UIBarButtonItem!
@@ -41,6 +42,7 @@ class SettingsVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource
         
         celciusSwitch.isOn = defaults.bool(forKey: dCelcius)
         celciusDescription?.text = NSLocalizedString("str_celcius_des", comment: "")
+        animationLabel?.text = NSLocalizedString("str_animation", comment: "")
         layoutDescription?.text = NSLocalizedString("str_layout_des", comment: "")
         celciusDescription?.adjustsFontSizeToFitWidth = true
         layoutDescription?.adjustsFontSizeToFitWidth = true

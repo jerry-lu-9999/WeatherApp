@@ -7,7 +7,7 @@
 */
 
 "str_celcius_des" = "Turn on Celcius system, turn off for fahrenheit system";
-"str_layout_des"  = "Default is insertion order, alphebetic order is based on the city name";
+"str_layout_des"  = "Change the setting for animation. Default means no animation";
 
 "str_default" = "default";
 "str_animation" = "animation";
